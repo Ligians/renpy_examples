@@ -1,0 +1,41 @@
+if items:
+
+        viewport: 
+            #This is the viewport with your NVL choices.
+            id "nvlChoices"
+            xpos 190
+            ypos 715
+            ysize 265
+
+            draggable True
+            mousewheel True
+            
+            vbox:
+                spacing 5
+                for i in items:
+                    hbox:
+                        add "gui/nvl/question_button.png":
+                            yalign 0.5
+                        textbutton i.caption:
+                            text_xmaximum 550
+                            style "nvl_button"
+                            tooltip i.kwargs.get('tooltip','')       
+                            action i.action
+                
+        $ tt = GetTooltip() or ""
+    
+        if tt:
+            #this will make sure that the tooltip frame will disappear once you're not hovering the choice anymore.
+            if tt == "":
+                pass
+            elif not tt == "":
+                frame:
+                    # this is the tooltip position. i used the mouse position cause yes :)
+                    pos renpy.get_mouse_pos()*5
+                    background "#0000005e"
+                    left_padding 20
+                    xmaximum 800
+                    text '[tt]':
+                        # you can format the text here in anyway you want. you can also add anything you want in these tooltips, they're super flexible!
+                        color "#8b8b8b"
+                        size 24
