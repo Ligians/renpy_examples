@@ -22,8 +22,6 @@ init python:
    # condition(s) g.condition("persistent.unlock_ABCDEFG")
    # final gallery image(s) g.image("ABCDEFG", "HIJKLMNOP")
 
-   #this changes the full screen image
-
    g.button("betatesterty")
    g.condition("persistent.unlock_beta1")
    g.image("extra/CGs/betatesterty.png")
